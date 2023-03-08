@@ -1,4 +1,6 @@
 using Acme.AccesoDatos.Data;
+using Acme.AccesoDatos.Repositorio;
+using Acme.AccesoDatos.Repositorio.IRepositorio;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +36,10 @@ namespace Acme
 
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddScoped<IUnidadTrabajo, UnidadTrabajo>();
+
+
             services.AddControllersWithViews();
         }
 
