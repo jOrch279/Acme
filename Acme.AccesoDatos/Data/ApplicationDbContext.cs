@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Acme.Data
+namespace Acme.AccesoDatos.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {

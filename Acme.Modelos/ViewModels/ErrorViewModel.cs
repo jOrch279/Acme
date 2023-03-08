@@ -1,6 +1,6 @@
 using System;
 
-namespace Acme.Models
+namespace Acme.Modelos.ViewModels
 {
     public class ErrorViewModel
     {
