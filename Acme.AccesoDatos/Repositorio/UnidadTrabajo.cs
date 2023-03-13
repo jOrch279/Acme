@@ -11,14 +11,14 @@ namespace Acme.AccesoDatos.Repositorio
     public class UnidadTrabajo :IUnidadTrabajo
     {
         private readonly ApplicationDbContext _db;
-       
-
         public IScursalRepositorio Sucursal { get; private set; }
+        public ICategoriaRepositorio Categoria { get; private set; }
 
         public UnidadTrabajo(ApplicationDbContext db)
         {
             _db = db;
             Sucursal = new SucursalRepositorio(_db);
+            Categoria = new CategoriaRepositorio(_db);
 
         }
 

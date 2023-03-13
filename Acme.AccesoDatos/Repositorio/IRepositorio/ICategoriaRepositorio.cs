@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Acme.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace Acme.AccesoDatos.Repositorio.IRepositorio
 {
-    public interface IUnidadTrabajo :IDisposable
+    public interface ICategoriaRepositorio :IRepositorio<Categoria>
     {
-        IScursalRepositorio Sucursal { get;  }
-        ICategoriaRepositorio Categoria { get; }
-
+        void Actualizar(Categoria categoria);
     }
 }
