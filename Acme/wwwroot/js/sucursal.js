@@ -29,11 +29,11 @@ function loadDataTable() {
                 "render": function (data) {
                     return `
             <div class="text-center">
-                <a href="Admin/Sucursal/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer" >
-                    <i class="fas fa-edit"></i>
+                <a href="Sucursal/Upsert/${data}" class="btn btn-success text-white" style="cursor:pointer" >
+                    <i class="fa-sharp fa-regular fa-pen-to-square"></i>
                 </a>
                 <a class="btn btn-danger tetx-white" style="cursor:pointer">
-                     <i class="fas fa-trash"></i>
+                     <i class="fa-solid fa-trash-xmark"></i>
                 </a>
             </div>
                `;
