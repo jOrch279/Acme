@@ -11,5 +11,6 @@ namespace Acme.AccesoDatos.Repositorio.IRepositorio
         IScursalRepositorio Sucursal { get;  }
         ICategoriaRepositorio Categoria { get; }
 
+        void Guardar();
     }
 }

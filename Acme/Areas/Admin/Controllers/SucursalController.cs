@@ -45,6 +45,27 @@ namespace Acme.Areas.Admin.Controllers
 
 
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Upsert(Sucursal sucursal)
+        {
+            if (ModelState.IsValid)
+            {
+                if (sucursal.Id ==0)
+                {
+                    _unidadTrabajo.Sucursal.Agregar(sucursal);
+                }
+                else
+                {
+                    _unidadTrabajo.Sucursal.Actualizar(sucursal);
+                }
+                _unidadTrabajo.Guardar();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(sucursal);
+        }
+
+
 
         #region API
         [HttpGet]
@@ -53,6 +74,20 @@ namespace Acme.Areas.Admin.Controllers
             var todos = _unidadTrabajo.Sucursal.ObtenerTodos();
             return Json(new { data = todos });
         }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var sucursalDb = _unidadTrabajo.Sucursal.Obtener(id);
+            if (sucursalDb == null)
+            {
+                return Json(new { success = false, message = "Error al borrar" });
+            }
+            _unidadTrabajo.Sucursal.Remover(sucursalDb);
+            _unidadTrabajo.Guardar();
+            return Json(new { success = true, message = "Bodega borrada" });
+        }
+
         #endregion
     }
 }

@@ -24,9 +24,9 @@ namespace Acme.AccesoDatos.Repositorio
             {
                 sucursalDb.Nombre = sucursal.Nombre;
                 sucursalDb.Descripcion = sucursal.Descripcion;
-                sucursal.Estado = sucursal.Estado;
+                sucursalDb.Estado = sucursal.Estado;
 
-                _db.SaveChanges();
+                
             }
         }
 
